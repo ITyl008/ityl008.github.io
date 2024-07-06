@@ -12,17 +12,31 @@ date: now
 1.使用npm -v && node -v 出现 ![图片](pg2/1.jpg)
 2.使用npm 将镜像源指向淘宝： 
 
-	```
-	npm install -g cnpm --registry=https://registry.npm.taobao.org
+[csdn taobaonew](http://t.csdnimg.cn/hiAeu)
+
+~~npm install -g cnpm --registry=https://registry.npm.taobao.org~~
+2024年7月6日已经过时了
+
+重新来吧：
 ```
+	// 清空缓存
+	npm cache clean --force
+	//指定新版
+	npm config set registry https://registry.npmmirror.com
+```
+
 等待安装。。。
 
-3.cnpm -v ’查看cnpm
-4.全局安装hexo博客框架： 
-```
+<strike>
+	3.cnpm -v ’查看cnpm 
+	4.全局安装hexo博客框架： 
 	cnpm install -g hexo-cli 
-```
+</strike>
+
+不需要使用cnpm，只需要使用npm install -g hexo-cli
+
 hexo -v 验证
+
 5.****建立空文件夹用来存储以后写的博客****
 ```
 	mkdir blog
@@ -103,6 +117,25 @@ _注意开头格式-前六行就写这些，下面一行开始写内容支持mar
 如果是gitee 就要 输入： https://gitee.com/yourusername/yourusername.git
 # 问题3
 输入 `hexo clean `显示失败，那么就要在/blog目录下找到 public 如果是空文件夹就要删除，如果不是那么就要先复制一份到别的地方去在删除原来的。
+# 问题4
+如果npm install cnpm 出现如下错误： 
+![图片](pg2/error1_cnpm--regisrty.png)
+
+重新指定 npm config set registry https://registry.npmmirror.com
+再查看下 npm config get registry，看看是否是 npmmirror.com
+
+# 问题5 
+cnpm 版本与nodejs不符合，如何退回版本
+
+错误如下：wanted: {"node":">= 14.18.0"} (current: {"node":"14.16.1","npm":"6.14.12"})
+
+使用如下命令
+
+npm install -g cnpm@7.1.1 --registry=http://registry.npmmirror.com
+
+//查看有哪些cnpm版本命令：
+
+npm view cnpm versions
 
 --------------------------------------------------
 # gitee 部署
