@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/rever/index.html">
+<meta property="og:url" content="http://example.com/asdfasfasfasfasfdas/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -71,214 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/01/08/index/" class="article-date">
-  <time class="dt-published" datetime="2025-01-07T17:19:47.264Z" itemprop="datePublished">2025-01-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="欢迎进入"><a href="#欢迎进入" class="headerlink" title="欢迎进入"></a>欢迎进入</h2><blockquote>
-<p>非常感谢<br>进入我的 <a href="/rever/">博客</a> 吧</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/01/08/index/" data-id="cm5mqnfp00000houk87rf4x3i" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-edgeexp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/08/edgeexp/" class="article-date">
-  <time class="dt-published" datetime="2024-07-08T06:29:56.000Z" itemprop="datePublished">2024-07-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/08/edgeexp/">edgeexp</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>[toc]</p>
-<h1 id="edge浏览器扩展-🥢"><a href="#edge浏览器扩展-🥢" class="headerlink" title="edge浏览器扩展 🥢"></a>edge浏览器扩展 🥢</h1><h2 id="去除广告-🔪"><a href="#去除广告-🔪" class="headerlink" title="去除广告 🔪"></a>去除广告 🔪</h2><p><img src="/pg2/5a27cda252b1cc0d022e6d51.png" alt="step1"><br>👣如何去除 <a target="_blank" rel="noopener" href="https://htmlcheatsheet.com/">HTMLcheat</a> 当中的ad呢？</p>
-<hr>
-<ul>
-<li><p><strong>老师教的方法是在控制台下,并要求放在浏览器扩展中</strong> </p>
-<p>  <img src="/pg2/adsandcont.jpg" alt="step1"></p>
-</li>
-<li><p><strong>后面自己摸索编写js</strong></p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在父类masonryPanel下找到广告栏 reklamocska, 在判断rekla。</span></span><br><span class="line"><span class="comment">//因为每个栏都有minimizepanel,但是有reklamocska的才是我们需要的</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.masonryPanel&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">ad</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> re = ad.<span class="title function_">querySelector</span>(<span class="string">&#x27;.reklamocska&#x27;</span>);</span><br><span class="line">  <span class="comment">//re就是在masonryPanel下找到reklamocska,如果找到就关闭masonrypanel的minimizePanel</span></span><br><span class="line">  <span class="comment">//这样一个逻辑</span></span><br><span class="line">  <span class="keyword">if</span> (re)&#123;</span><br><span class="line">	<span class="keyword">const</span> mi= ad.<span class="title function_">querySelector</span>(<span class="string">&#x27;.minimizePanel&#x27;</span>);</span><br><span class="line">	mi.<span class="title function_">click</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="/pg2/6011d59d2a08e9000490abbe.png" alt="step2"></p>
-</li>
-</ul>
-<ol start="2">
-<li><h2 id="🎫制作扩展参考微软官网-创建扩展教程"><a href="#🎫制作扩展参考微软官网-创建扩展教程" class="headerlink" title="🎫制作扩展参考微软官网 创建扩展教程"></a>🎫制作扩展参考微软官网 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/microsoft-edge/extensions-chromium/getting-started/part1-simple-extension?tabs=v3">创建扩展教程</a></h2><ul>
-<li>新建一个manifast.js 添加如下内容  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;NASA picture of the day viewer&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.0.0.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;manifest_version&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;An extension to display the NASA picture of the day.&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;icons&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;16&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icons/nasapod16x16.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;32&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icons/nasapod32x32.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;48&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icons/nasapod48x48.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;128&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icons/nasapod128x128.png&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;default_popup&quot;</span><span class="punctuation">:</span> <span class="string">&quot;popup/popup.html&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
-<li>新建一个html<br> <img src="/pg2/jt247851.png" alt="htmljiegou"></li>
-</ul>
-<p> <strong>贴出代码</strong></p>
-<pre><code> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>NASA picture of the day<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/images/stars.jpeg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Display the stars image&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
- 
-</code></pre>
-<ul>
-<li><p>目录结构如下 </p>
-  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">└── part1</span><br><span class="line">    ├── manifest.json</span><br><span class="line">    ├── icons</span><br><span class="line">    │   ├── nasapod16x16.png</span><br><span class="line">    │   ├── nasapod32x32.png</span><br><span class="line">    │   ├── nasapod48x48.png</span><br><span class="line">    │   └── nasapod128x128.png</span><br><span class="line">    ├── images</span><br><span class="line">    │   └── stars.jpeg</span><br><span class="line">    └── popup</span><br><span class="line">        └── popup.html</span><br></pre></td></tr></table></figure>
-<p>  图片如下</p>
-<p>  <img src="/pg2/jt24785.png" alt="mljiegou"></p>
-</li>
-<li><p>进入 edge 输入 <code>edge://extensions/</code></p>
-<p>  <img src="/pg2/jt247852.png" alt="edgekuoz"></p>
-</li>
-</ul>
-<p> <strong>下一步添加扩展文件夹</strong></p>
-<p> <img src="/pg2/jt247853.png" alt="edgeanzhuangjietu"></p>
-<p> <strong>下一步查看和使用</strong></p>
-<p> <img src="/pg2/jt247854.png" alt="edgeanzhuangjietu"></p>
-</li>
-</ol>
-<h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><ol>
-<li><p><strong>我是如何做下来的？</strong></p>
-<p> 只是掌握浏览器F12，但是知道HTML5基础，懂得找div class，懂得使用ChatGPT</p>
-<ul>
-<li><p>其中第一步是：f12开启，在源码中用鼠标移动到div上，看看哪一块高亮，先找到div的class</p>
-</li>
-<li><p>问ChatGPT<br>  <img src="/pg2/jt247910.png" alt="问题与ChatGPT回答"></p>
-</li>
-<li><p><strong>上搜索引擎询问如何做</strong><br>  <img src="/pg2/jt2479101.png" alt="搜索引擎询问"></p>
-<p>  <strong>一个个点击，发现第一个是edge官方</strong></p>
-</li>
-</ul>
-<p> 注：</p><p style="color :red;">解决问题盲目，<strong>应当要如此解决： 什么地方的插件，在什么官网上找，对症下药，一步到位，尽量减少查询次数。</strong></p><p></p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/08/edgeexp/" data-id="clyeatolm0001bouka6gy900r" data-title="edgeexp" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Yngl" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/06/Yngl/" class="article-date">
-  <time class="dt-published" datetime="2024-07-06T07:23:17.000Z" itemprop="datePublished">2024-07-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/06/Yngl/">Yngl</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="光速不变论"><a href="#光速不变论" class="headerlink" title="光速不变论"></a>光速不变论</h1><h2 id="计算机如何去学"><a href="#计算机如何去学" class="headerlink" title="计算机如何去学"></a>计算机如何去学</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/06/Yngl/" data-id="clyeatolh0000boukbwgzcqyh" data-title="Yngl" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-my" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/06/my/" class="article-date">
-  <time class="dt-published" datetime="2024-07-06T07:21:37.000Z" itemprop="datePublished">2024-07-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/06/my/">Yngl小科</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>杨力</strong></p>
-<h3 id="梦想要有"><a href="#梦想要有" class="headerlink" title="梦想要有"></a>梦想要有</h3><p>😗2002年生于江西丰城铁路，在丰城铁路生活6年跟着爷爷，教育经历：小学、初中、<br>    中职、大学、社会📒</p>
-<p>🤵‍♂️非著名计算机学者、计算机XXX学开创者，享誉海内外，是2050年国家表彰建设<br>    社会主义现代化强国100位先锋 </p>
-<p style="font-size:32px;color: red;background: yellow;">☭是中国共产党的亲密朋友和全世界人民的知心朋友,青春心向党，☭</p>
-
-<p><img src="/pg2/a.gif" alt="你好"></p>
-<p>图片asdfasdfadsf <img src="/pg2/580b585b2edbce24c47b2bde.png" alt="aab"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/06/my/" data-id="clyeatolo0003bouk4vp0dcfm" data-title="Yngl小科" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-文件类" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/06/24/%E6%96%87%E4%BB%B6%E7%B1%BB/" class="article-date">
-  <time class="dt-published" datetime="2022-06-24T02:30:10.990Z" itemprop="datePublished">2022-06-24</time>
+    <a href="/2025/01/08/%E6%96%87%E4%BB%B6%E7%B1%BB/" class="article-date">
+  <time class="dt-published" datetime="2025-01-07T16:58:43.762Z" itemprop="datePublished">2025-01-08</time>
 </a>
     
   </div>
@@ -289,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/24/%E6%96%87%E4%BB%B6%E7%B1%BB/">工具</a>
+      <a class="p-name article-title" href="/2025/01/08/%E6%96%87%E4%BB%B6%E7%B1%BB/">工具</a>
     </h1>
   
 
@@ -420,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/24/%E6%96%87%E4%BB%B6%E7%B1%BB/" data-id="clyeatolr0006bouk0yj2c7ja" data-title="工具" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2025/01/08/%E6%96%87%E4%BB%B6%E7%B1%BB/" data-id="cm5ms6m6f0005kkukhvqvfjk0" data-title="工具" class="article-share-link">Share</a>
       
       
       
@@ -434,8 +230,8 @@
   
     <article id="post-pg2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/04/23/pg2/" class="article-date">
-  <time class="dt-published" datetime="2022-04-23T07:20:55.030Z" itemprop="datePublished">2022-04-23</time>
+    <a href="/2025/01/08/pg2/" class="article-date">
+  <time class="dt-published" datetime="2025-01-07T16:58:43.761Z" itemprop="datePublished">2025-01-08</time>
 </a>
     
   </div>
@@ -446,7 +242,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/23/pg2/">建立hexo所遇到的坑</a>
+      <a class="p-name article-title" href="/2025/01/08/pg2/">建立hexo所遇到的坑</a>
     </h1>
   
 
@@ -502,7 +298,7 @@
 <h1 id="问题5"><a href="#问题5" class="headerlink" title="问题5"></a>问题5</h1><p>cnpm 版本与nodejs不符合，如何退回版本</p>
 <p>错误如下：wanted: {“node”:”&gt;&#x3D; 14.18.0”} (current: {“node”:”14.16.1”,”npm”:”6.14.12”})</p>
 <p>使用如下命令</p>
-<p>npm install -g <a href="mailto:&#99;&#110;&#112;&#x6d;&#64;&#55;&#46;&#x31;&#46;&#x31;">&#99;&#110;&#112;&#x6d;&#64;&#55;&#46;&#x31;&#46;&#x31;</a> –registry&#x3D;<a target="_blank" rel="noopener" href="http://registry.npmmirror.com/">http://registry.npmmirror.com</a></p>
+<p>npm install -g <a href="mailto:&#99;&#110;&#x70;&#x6d;&#x40;&#55;&#x2e;&#49;&#x2e;&#49;">&#99;&#110;&#x70;&#x6d;&#x40;&#55;&#x2e;&#49;&#x2e;&#49;</a> –registry&#x3D;<a target="_blank" rel="noopener" href="http://registry.npmmirror.com/">http://registry.npmmirror.com</a></p>
 <p>&#x2F;&#x2F;查看有哪些cnpm版本命令：</p>
 <p>npm view cnpm versions</p>
 <hr>
@@ -514,7 +310,180 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/23/pg2/" data-id="clyeatolp0004bouke7kk9uyn" data-title="建立hexo所遇到的坑" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2025/01/08/pg2/" data-id="cm5ms6m6e0003kkuk1ody9got" data-title="建立hexo所遇到的坑" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-edgeexp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/08/edgeexp/" class="article-date">
+  <time class="dt-published" datetime="2024-07-08T06:29:56.000Z" itemprop="datePublished">2024-07-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/07/08/edgeexp/">edgeexp</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>[toc]</p>
+<h1 id="edge浏览器扩展-🥢"><a href="#edge浏览器扩展-🥢" class="headerlink" title="edge浏览器扩展 🥢"></a>edge浏览器扩展 🥢</h1><h2 id="去除广告-🔪"><a href="#去除广告-🔪" class="headerlink" title="去除广告 🔪"></a>去除广告 🔪</h2><p><img src="/pg2/5a27cda252b1cc0d022e6d51.png" alt="step1"><br>👣如何去除 <a target="_blank" rel="noopener" href="https://htmlcheatsheet.com/">HTMLcheat</a> 当中的ad呢？</p>
+<hr>
+<ul>
+<li><p><strong>老师教的方法是在控制台下,并要求放在浏览器扩展中</strong> </p>
+<p>  <img src="/pg2/adsandcont.jpg" alt="step1"></p>
+</li>
+<li><p><strong>后面自己摸索编写js</strong></p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在父类masonryPanel下找到广告栏 reklamocska, 在判断rekla。</span></span><br><span class="line"><span class="comment">//因为每个栏都有minimizepanel,但是有reklamocska的才是我们需要的</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.masonryPanel&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">ad</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> re = ad.<span class="title function_">querySelector</span>(<span class="string">&#x27;.reklamocska&#x27;</span>);</span><br><span class="line">  <span class="comment">//re就是在masonryPanel下找到reklamocska,如果找到就关闭masonrypanel的minimizePanel</span></span><br><span class="line">  <span class="comment">//这样一个逻辑</span></span><br><span class="line">  <span class="keyword">if</span> (re)&#123;</span><br><span class="line">	<span class="keyword">const</span> mi= ad.<span class="title function_">querySelector</span>(<span class="string">&#x27;.minimizePanel&#x27;</span>);</span><br><span class="line">	mi.<span class="title function_">click</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pg2/6011d59d2a08e9000490abbe.png" alt="step2"></p>
+</li>
+</ul>
+<ol start="2">
+<li><h2 id="🎫制作扩展参考微软官网-创建扩展教程"><a href="#🎫制作扩展参考微软官网-创建扩展教程" class="headerlink" title="🎫制作扩展参考微软官网 创建扩展教程"></a>🎫制作扩展参考微软官网 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/microsoft-edge/extensions-chromium/getting-started/part1-simple-extension?tabs=v3">创建扩展教程</a></h2><ul>
+<li>新建一个manifast.js 添加如下内容  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;NASA picture of the day viewer&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.0.0.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;manifest_version&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;An extension to display the NASA picture of the day.&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;icons&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;16&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icons/nasapod16x16.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;32&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icons/nasapod32x32.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;48&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icons/nasapod48x48.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;128&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icons/nasapod128x128.png&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;default_popup&quot;</span><span class="punctuation">:</span> <span class="string">&quot;popup/popup.html&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li>新建一个html<br> <img src="/pg2/jt247851.png" alt="htmljiegou"></li>
+</ul>
+<p> <strong>贴出代码</strong></p>
+<pre><code> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>NASA picture of the day<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/images/stars.jpeg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Display the stars image&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+ 
+</code></pre>
+<ul>
+<li><p>目录结构如下 </p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">└── part1</span><br><span class="line">    ├── manifest.json</span><br><span class="line">    ├── icons</span><br><span class="line">    │   ├── nasapod16x16.png</span><br><span class="line">    │   ├── nasapod32x32.png</span><br><span class="line">    │   ├── nasapod48x48.png</span><br><span class="line">    │   └── nasapod128x128.png</span><br><span class="line">    ├── images</span><br><span class="line">    │   └── stars.jpeg</span><br><span class="line">    └── popup</span><br><span class="line">        └── popup.html</span><br></pre></td></tr></table></figure>
+<p>  图片如下</p>
+<p>  <img src="/pg2/jt24785.png" alt="mljiegou"></p>
+</li>
+<li><p>进入 edge 输入 <code>edge://extensions/</code></p>
+<p>  <img src="/pg2/jt247852.png" alt="edgekuoz"></p>
+</li>
+</ul>
+<p> <strong>下一步添加扩展文件夹</strong></p>
+<p> <img src="/pg2/jt247853.png" alt="edgeanzhuangjietu"></p>
+<p> <strong>下一步查看和使用</strong></p>
+<p> <img src="/pg2/jt247854.png" alt="edgeanzhuangjietu"></p>
+</li>
+</ol>
+<h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><ol>
+<li><p><strong>我是如何做下来的？</strong></p>
+<p> 只是掌握浏览器F12，但是知道HTML5基础，懂得找div class，懂得使用ChatGPT</p>
+<ul>
+<li><p>其中第一步是：f12开启，在源码中用鼠标移动到div上，看看哪一块高亮，先找到div的class</p>
+</li>
+<li><p>问ChatGPT<br>  <img src="/pg2/jt247910.png" alt="问题与ChatGPT回答"></p>
+</li>
+<li><p><strong>上搜索引擎询问如何做</strong><br>  <img src="/pg2/jt2479101.png" alt="搜索引擎询问"></p>
+<p>  <strong>一个个点击，发现第一个是edge官方</strong></p>
+</li>
+</ul>
+<p> 注：</p><p style="color :red;">解决问题盲目，<strong>应当要如此解决： 什么地方的插件，在什么官网上找，对症下药，一步到位，尽量减少查询次数。</strong></p><p></p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/08/edgeexp/" data-id="cm5ms6m680001kkuk27gi7s67" data-title="edgeexp" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Yngl" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/06/Yngl/" class="article-date">
+  <time class="dt-published" datetime="2024-07-06T07:23:17.000Z" itemprop="datePublished">2024-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/07/06/Yngl/">Yngl</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="光速不变论"><a href="#光速不变论" class="headerlink" title="光速不变论"></a>光速不变论</h1><h2 id="计算机如何去学"><a href="#计算机如何去学" class="headerlink" title="计算机如何去学"></a>计算机如何去学</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/06/Yngl/" data-id="cm5ms6m650000kkuk3c731kfk" data-title="Yngl" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-my" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/06/my/" class="article-date">
+  <time class="dt-published" datetime="2024-07-06T07:21:37.000Z" itemprop="datePublished">2024-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/07/06/my/">Yngl小科</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>杨力</strong></p>
+<h3 id="梦想要有"><a href="#梦想要有" class="headerlink" title="梦想要有"></a>梦想要有</h3><p>😗2002年生于江西丰城铁路，在丰城铁路生活6年跟着爷爷，教育经历：小学、初中、<br>    中职、大学、社会📒</p>
+<p>🤵‍♂️非著名计算机学者、计算机XXX学开创者，享誉海内外，是2050年国家表彰建设<br>    社会主义现代化强国100位先锋 </p>
+<p style="font-size:32px;color: red;background: yellow;">☭是中国共产党的亲密朋友和全世界人民的知心朋友,青春心向党，☭</p>
+
+<p><img src="/pg2/a.gif" alt="你好"></p>
+<p>图片asdfasdfadsf <img src="/pg2/580b585b2edbce24c47b2bde.png" alt="aab"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/06/my/" data-id="cm5ms6m6e0004kkuk2hube7uk" data-title="Yngl小科" class="article-share-link">Share</a>
       
       
       
@@ -556,7 +525,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="clyeatolq0005bouk2plye0m7" data-title="我的第一篇博客" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="cm5ms6m6g0006kkuk5l820ur0" data-title="我的第一篇博客" class="article-share-link">Share</a>
       
       
       
@@ -595,7 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/16/hello%20world/" data-id="clyeatolo0002boukb9ue1l1p" data-title="Hello world" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/16/hello%20world/" data-id="cm5ms6m6d0002kkukguia2ftz" data-title="Hello world" class="article-share-link">Share</a>
       
       
       
@@ -625,7 +594,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li></ul>
     </div>
   </div>
 
@@ -638,7 +607,11 @@
       <ul>
         
           <li>
-            <a href="/2025/01/08/index/">(no title)</a>
+            <a href="/2025/01/08/%E6%96%87%E4%BB%B6%E7%B1%BB/">工具</a>
+          </li>
+        
+          <li>
+            <a href="/2025/01/08/pg2/">建立hexo所遇到的坑</a>
           </li>
         
           <li>
@@ -651,10 +624,6 @@
         
           <li>
             <a href="/2024/07/06/my/">Yngl小科</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/24/%E6%96%87%E4%BB%B6%E7%B1%BB/">工具</a>
           </li>
         
       </ul>
