@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   
-  <title>Archives | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
@@ -71,170 +71,510 @@
       <div class="outer">
         <section id="main">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2024/07/08/edgeexp/" class="archive-article-date">
-  <time class="dt-published" datetime="2024-07-08T06:29:56.000Z" itemprop="datePublished">Jul 8</time>
+    <article id="post-edgeexp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/08/edgeexp/" class="article-date">
+  <time class="dt-published" datetime="2024-07-08T06:29:56.000Z" itemprop="datePublished">2024-07-08</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/07/08/edgeexp/">edgeexp</a>
+      <a class="p-name article-title" href="/2024/07/08/edgeexp/">edgeexp</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2024/07/06/Yngl/" class="archive-article-date">
-  <time class="dt-published" datetime="2024-07-06T07:23:17.000Z" itemprop="datePublished">Jul 6</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
+        <p>[toc]</p>
+<h1 id="edge浏览器扩展-🥢"><a href="#edge浏览器扩展-🥢" class="headerlink" title="edge浏览器扩展 🥢"></a>edge浏览器扩展 🥢</h1><h2 id="去除广告-🔪"><a href="#去除广告-🔪" class="headerlink" title="去除广告 🔪"></a>去除广告 🔪</h2><p><img src="/pg2/5a27cda252b1cc0d022e6d51.png" alt="step1"><br>👣如何去除 <a target="_blank" rel="noopener" href="https://htmlcheatsheet.com/">HTMLcheat</a> 当中的ad呢？</p>
+<hr>
+<ul>
+<li><p><strong>老师教的方法是在控制台下,并要求放在浏览器扩展中</strong> </p>
+<p>  <img src="/pg2/adsandcont.jpg" alt="step1"></p>
+</li>
+<li><p><strong>后面自己摸索编写js</strong></p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在父类masonryPanel下找到广告栏 reklamocska, 在判断rekla。</span></span><br><span class="line"><span class="comment">//因为每个栏都有minimizepanel,但是有reklamocska的才是我们需要的</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.masonryPanel&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">ad</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> re = ad.<span class="title function_">querySelector</span>(<span class="string">&#x27;.reklamocska&#x27;</span>);</span><br><span class="line">  <span class="comment">//re就是在masonryPanel下找到reklamocska,如果找到就关闭masonrypanel的minimizePanel</span></span><br><span class="line">  <span class="comment">//这样一个逻辑</span></span><br><span class="line">  <span class="keyword">if</span> (re)&#123;</span><br><span class="line">	<span class="keyword">const</span> mi= ad.<span class="title function_">querySelector</span>(<span class="string">&#x27;.minimizePanel&#x27;</span>);</span><br><span class="line">	mi.<span class="title function_">click</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pg2/6011d59d2a08e9000490abbe.png" alt="step2"></p>
+</li>
+</ul>
+<ol start="2">
+<li><h2 id="🎫制作扩展参考微软官网-创建扩展教程"><a href="#🎫制作扩展参考微软官网-创建扩展教程" class="headerlink" title="🎫制作扩展参考微软官网 创建扩展教程"></a>🎫制作扩展参考微软官网 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/microsoft-edge/extensions-chromium/getting-started/part1-simple-extension?tabs=v3">创建扩展教程</a></h2><ul>
+<li>新建一个manifast.js 添加如下内容  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;NASA picture of the day viewer&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.0.0.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;manifest_version&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;An extension to display the NASA picture of the day.&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;icons&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;16&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icons/nasapod16x16.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;32&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icons/nasapod32x32.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;48&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icons/nasapod48x48.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;128&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icons/nasapod128x128.png&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;default_popup&quot;</span><span class="punctuation">:</span> <span class="string">&quot;popup/popup.html&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li>新建一个html<br> <img src="/pg2/jt247851.png" alt="htmljiegou"></li>
+</ul>
+<p> <strong>贴出代码</strong></p>
+<pre><code> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>NASA picture of the day<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/images/stars.jpeg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Display the stars image&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+ 
+</code></pre>
+<ul>
+<li><p>目录结构如下 </p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">└── part1</span><br><span class="line">    ├── manifest.json</span><br><span class="line">    ├── icons</span><br><span class="line">    │   ├── nasapod16x16.png</span><br><span class="line">    │   ├── nasapod32x32.png</span><br><span class="line">    │   ├── nasapod48x48.png</span><br><span class="line">    │   └── nasapod128x128.png</span><br><span class="line">    ├── images</span><br><span class="line">    │   └── stars.jpeg</span><br><span class="line">    └── popup</span><br><span class="line">        └── popup.html</span><br></pre></td></tr></table></figure>
+<p>  图片如下</p>
+<p>  <img src="/pg2/jt24785.png" alt="mljiegou"></p>
+</li>
+<li><p>进入 edge 输入 <code>edge://extensions/</code></p>
+<p>  <img src="/pg2/jt247852.png" alt="edgekuoz"></p>
+</li>
+</ul>
+<p> <strong>下一步添加扩展文件夹</strong></p>
+<p> <img src="/pg2/jt247853.png" alt="edgeanzhuangjietu"></p>
+<p> <strong>下一步查看和使用</strong></p>
+<p> <img src="/pg2/jt247854.png" alt="edgeanzhuangjietu"></p>
+</li>
+</ol>
+<h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><ol>
+<li><p><strong>我是如何做下来的？</strong></p>
+<p> 只是掌握浏览器F12，但是知道HTML5基础，懂得找div class，懂得使用ChatGPT</p>
+<ul>
+<li><p>其中第一步是：f12开启，在源码中用鼠标移动到div上，看看哪一块高亮，先找到div的class</p>
+</li>
+<li><p>问ChatGPT<br>  <img src="/pg2/jt247910.png" alt="问题与ChatGPT回答"></p>
+</li>
+<li><p><strong>上搜索引擎询问如何做</strong><br>  <img src="/pg2/jt2479101.png" alt="搜索引擎询问"></p>
+<p>  <strong>一个个点击，发现第一个是edge官方</strong></p>
+</li>
+</ul>
+<p> 注：</p><p style="color :red;">解决问题盲目，<strong>应当要如此解决： 什么地方的插件，在什么官网上找，对症下药，一步到位，尽量减少查询次数。</strong></p><p></p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/08/edgeexp/" data-id="clyeatolm0001bouka6gy900r" data-title="edgeexp" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Yngl" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/06/Yngl/" class="article-date">
+  <time class="dt-published" datetime="2024-07-06T07:23:17.000Z" itemprop="datePublished">2024-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/07/06/Yngl/">Yngl</a>
+      <a class="p-name article-title" href="/2024/07/06/Yngl/">Yngl</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2024/07/06/my/" class="archive-article-date">
-  <time class="dt-published" datetime="2024-07-06T07:21:37.000Z" itemprop="datePublished">Jul 6</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
+        <h1 id="光速不变论"><a href="#光速不变论" class="headerlink" title="光速不变论"></a>光速不变论</h1><h2 id="计算机如何去学"><a href="#计算机如何去学" class="headerlink" title="计算机如何去学"></a>计算机如何去学</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/06/Yngl/" data-id="clyeatolh0000boukbwgzcqyh" data-title="Yngl" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-my" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/06/my/" class="article-date">
+  <time class="dt-published" datetime="2024-07-06T07:21:37.000Z" itemprop="datePublished">2024-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/07/06/my/">Yngl小科</a>
+      <a class="p-name article-title" href="/2024/07/06/my/">Yngl小科</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>杨力</strong></p>
+<h3 id="梦想要有"><a href="#梦想要有" class="headerlink" title="梦想要有"></a>梦想要有</h3><p>😗2002年生于江西丰城铁路，在丰城铁路生活6年跟着爷爷，教育经历：小学、初中、<br>    中职、大学、社会📒</p>
+<p>🤵‍♂️非著名计算机学者、计算机XXX学开创者，享誉海内外，是2050年国家表彰建设<br>    社会主义现代化强国100位先锋 </p>
+<p style="font-size:32px;color: red;background: yellow;">☭是中国共产党的亲密朋友和全世界人民的知心朋友,青春心向党，☭</p>
+
+<p><img src="/pg2/a.gif" alt="你好"></p>
+<p>图片asdfasdfadsf <img src="/pg2/580b585b2edbce24c47b2bde.png" alt="aab"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/06/my/" data-id="clyeatolo0003bouk4vp0dcfm" data-title="Yngl小科" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
   </div>
-</article>
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/06/24/%E6%96%87%E4%BB%B6%E7%B1%BB/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-06-24T02:30:10.990Z" itemprop="datePublished">Jun 24</time>
+</article>
+
+
+
+  
+    <article id="post-文件类" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/24/%E6%96%87%E4%BB%B6%E7%B1%BB/" class="article-date">
+  <time class="dt-published" datetime="2022-06-24T02:30:10.990Z" itemprop="datePublished">2022-06-24</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/06/24/%E6%96%87%E4%BB%B6%E7%B1%BB/">工具</a>
+      <a class="p-name article-title" href="/2022/06/24/%E6%96%87%E4%BB%B6%E7%B1%BB/">工具</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/04/23/pg2/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-04-23T07:20:55.030Z" itemprop="datePublished">Apr 23</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
+        <p>[toc]</p>
+<h1 id="typora-快捷方式"><a href="#typora-快捷方式" class="headerlink" title="typora 快捷方式"></a>typora 快捷方式</h1><h2 id="文件类"><a href="#文件类" class="headerlink" title="文件类"></a>文件类</h2><ul>
+<li>新建 ct+n</li>
+<li>新窗口 ct+sh+n</li>
+<li>打开 ct+o</li>
+<li>快速打开 ct+p</li>
+<li>保存 ct+s</li>
+<li>另存为 ct+sh+s</li>
+<li>打印 al+sh+p</li>
+<li>设置偏好 ct+逗号 ,</li>
+</ul>
+<h2 id="编辑类"><a href="#编辑类" class="headerlink" title="编辑类"></a>编辑类</h2><ul>
+<li><p>撤销 ctrl+z</p>
+</li>
+<li><p>重做 ctrl+y</p>
+</li>
+<li><p>剪切、复制、粘贴 x+c+v</p>
+</li>
+<li><p>复制为markdown格式 ctrl+shift+c</p>
+</li>
+<li><p>粘贴为纯文本 ctrl+shift+v</p>
+</li>
+<li><p>表情 win+. 💖</p>
+</li>
+<li><p>查找</p>
+<ul>
+<li>ctrl+f 查找 f3下一项 上一项 shift+f3</li>
+<li>替换 ctrl+h</li>
+</ul>
+</li>
+<li><p>删除当前词 ctrl+shift+d</p>
+</li>
+<li><p>选择</p>
+<ul>
+<li>选中当前行或句 ctrl+L </li>
+<li>选中当前词 ctrl+d</li>
+<li>选中点前格式文本 ctrl+e</li>
+</ul>
+</li>
+<li><blockquote>
+<p>跳转 :跳转到文首 ctrl+home ;跳转到所选内容 ctrl+j</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="段落类"><a href="#段落类" class="headerlink" title="段落类"></a>段落类</h2><ul>
+<li><p>标题 ctrl+1~6 分别是1-6级标题</p>
+</li>
+<li><p>段落 ctrl+0</p>
+</li>
+<li><p>提升标题级别 ctrl+&#x3D;降低 ctrl+-</p>
+</li>
+<li><p>表格</p>
+<ul>
+<li><p>插入表格 ctrl+T</p>
+</li>
+<li><p>下方插入行 ctrl+enter</p>
+</li>
+<li><p>上移改行 alt+上箭头</p>
+</li>
+<li><p>下移改行 alt+下箭头</p>
+</li>
+<li><p>删除行 ctrl+shift+退格</p>
+</li>
+<li><p>列表缩减 ctrl+[  ctrl+]</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>asdfafdasfasdf</th>
+<th>asdjflasdf</th>
+<th>asdjflasjdf</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="格式类"><a href="#格式类" class="headerlink" title="格式类"></a>格式类</h2><ul>
+<li>加粗 ctrl+b</li>
+<li>斜体 ctrl+i </li>
+<li>下画线 ctrl+u</li>
+<li>代码 ctrl+shift +&#96;</li>
+<li>删除线 alt+shift +5 </li>
+<li>超链接 ctrl+K</li>
+<li>插入图片 ctrl+shfit+i</li>
+<li>清除央视 ctrl+\</li>
+</ul>
+<h2 id="视图类"><a href="#视图类" class="headerlink" title="视图类"></a>视图类</h2><ul>
+<li>显示\隐藏侧边栏 ctrl+shift+L<ul>
+<li>大纲 ctrl+shift+1</li>
+<li>文档列表 ctrl+shift+2</li>
+<li>文件树 ctrl+shift+3</li>
+<li>搜索 ctrl+shift+f</li>
+</ul>
+</li>
+<li>源代码模式 ctrl+&#x2F;</li>
+<li>专注模式 f8</li>
+<li>打字机模式 f9</li>
+<li>全屏 f1</li>
+<li>大小<ul>
+<li>ctrl+shift+ +</li>
+<li>ctrl+shift+ -</li>
+</ul>
+</li>
+<li>开发着模式 f12</li>
+</ul>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ul>
+<li>高亮 &#x3D;&#x3D;    &#x3D;&#x3D;</li>
+<li>下标  ~  ~ </li>
+<li>上标 ^ ^</li>
+<li>生成目录 [ toc ]</li>
+<li>内联公式 $ $</li>
+<li>注释 &lt;! – –&gt;</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/24/%E6%96%87%E4%BB%B6%E7%B1%BB/" data-id="clyeatolr0006bouk0yj2c7ja" data-title="工具" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-pg2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/23/pg2/" class="article-date">
+  <time class="dt-published" datetime="2022-04-23T07:20:55.030Z" itemprop="datePublished">2022-04-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/23/pg2/">建立hexo所遇到的坑</a>
+      <a class="p-name article-title" href="/2022/04/23/pg2/">建立hexo所遇到的坑</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="本人因为兴趣所以搭建了一个网站，也用来记录自己成长的过程。"><a href="#本人因为兴趣所以搭建了一个网站，也用来记录自己成长的过程。" class="headerlink" title="本人因为兴趣所以搭建了一个网站，也用来记录自己成长的过程。"></a>本人因为兴趣所以搭建了一个网站，也用来记录自己成长的过程。</h2><h2 id="下面开始总结过程"><a href="#下面开始总结过程" class="headerlink" title="下面开始总结过程"></a>下面开始总结过程</h2><p>入门视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?from=search&seid=2930915894768396428">CodeSheep</a>	<br>下载所需的必备软件：</p>
+<h2 id="node-js-点击跳转到下载"><a href="#node-js-点击跳转到下载" class="headerlink" title="node.js 点击跳转到下载"></a><strong>node.js</strong> <a target="_blank" rel="noopener" href="https://nodejs.org/dist/v14.16.1/">点击跳转到下载</a></h2><h2 id="git-bash-点击跳转到下载"><a href="#git-bash-点击跳转到下载" class="headerlink" title="git-bash  点击跳转到下载"></a><strong>git-bash</strong>  <a target="_blank" rel="noopener" href="https://npm.taobao.org/mirrors/git-for-windows/v2.31.1.windows.1/">点击跳转到下载</a></h2><pre><code>那现在ok了，我们进入下载好的git 使用bash（看个人还可以用git-cmd） 
+</code></pre>
+<p>1.使用npm -v &amp;&amp; node -v 出现 <img src="/pg2/1.jpg" alt="图片"><br>2.使用npm 将镜像源指向淘宝： </p>
+<p><a target="_blank" rel="noopener" href="http://t.csdnimg.cn/hiAeu">csdn taobaonew</a></p>
+<p><del>npm install -g cnpm –registry&#x3D;<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></del><br>2024年7月6日已经过时了</p>
+<p>重新来吧：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 清空缓存</span><br><span class="line">npm cache clean --force</span><br><span class="line">//指定新版</span><br><span class="line">npm config set registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+
+<p>等待安装。。。</p>
+<strike>
+    3.cnpm -v ’查看cnpm 
+    4.全局安装hexo博客框架： 
+    cnpm install -g hexo-cli 
+</strike>
+
+<p>不需要使用cnpm，只需要使用npm install -g hexo-cli</p>
+<p>hexo -v 验证</p>
+<p>5.<strong><strong>建立空文件夹用来存储以后写的博客</strong></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure>
+<p>或者自己创建一个文件夹并进入其中</p>
+<p>6.hexo 初始化 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>等待安装。。。<br>可以查看文件夹里面会生成一些hexo的文件夹。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s ’本地打开hexo服务 浏览器输入localhost：4000 看到hexo标题时即成功。</span><br></pre></td></tr></table></figure>
+<p>以后都可以用hexo s 来预览</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n “filename” ‘引号里面就是文件名，系统会自动地创建你所指定地filename.md</span><br></pre></td></tr></table></figure>
+<p>输入LL 查看文件或者进入 source\ _posts文件夹，使用编辑软件进入编辑。<br><em>注意开头格式-前六行就写这些，下面一行开始写内容支持markdown语法</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title： 本篇博客的名称</span><br><span class="line">date：yyyy-mm-dd hh：MM：ss ；这里不能写错</span><br><span class="line">tags：</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>可以查看文件夹中是否有建立 【你所指定地filename.md】<br>下面首先使用 <code>hexo clean</code> 清除， <code>hexo g</code> 生成，就可重新启动 <code>hexo s</code><br>    会发现刚刚写的会在第一篇开头。</p>
+<h1 id="部署-github-x2F-gitee"><a href="#部署-github-x2F-gitee" class="headerlink" title="部署 github&#x2F;gitee"></a>部署 <em>github&#x2F;gitee</em></h1><h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p>1.登录 <a target="_blank" rel="noopener" href="https://github.com/login?return_to=/join?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%252F&source=header-home">Github</a> 如果没有账号就 <a target="_blank" rel="noopener" href="https://github.com/join?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=/&source=header-home">注册</a><br>    好了之后我们进入主页点击右上角加号选择 <strong>New repository</strong><br>注意：<br>    Repository name要和左边的一样，如你的用户名使hsw12那么repository name就是 hsw12.github.io(Youusename.github.io)格式不能错<br>    Description (optional) 描述随便<br>    输入以上ok 选择-<strong>creat repository</strong></p>
+<pre><code>进入命令行 此时需要安装git插件：命令行目录要在\blog下，就是你安装hexo的目录
+</code></pre>
+<p>键入 <code>cnpm install --save hexo-deployer-git</code>  -稍等安装<br>    进入_config.yml文件，最下方修改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#deploy:</span><br><span class="line">  type: git 	&#x27;注意每行“：”后都要有一个空格且repo，branch是自己写&#x27;</span><br><span class="line">  repo: https://github.com/hsw12/hsw12.github.io ’指定刚刚建立的github仓库 </span><br><span class="line">  branch: master ‘指定 branch</span><br><span class="line"></span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+<p>那 github仓库地址在哪呢？ 在 github界面点击头像 <em>your repository</em> - 下方有 Youusename.github.io 格式的库点进去选择code 那里有https复制粘贴<br>    还要再一部就是保存你的github用户名，邮箱，用来确认你是谁。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot; 如 hsw12那your name就要写 hsw12注意不要删除双引号</span><br><span class="line">git config --global user.email &quot;email@example.com&quot; qq邮箱都可</span><br><span class="line">再次输入可以查看系统保存</span><br><span class="line">git config --global user.name</span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
+
+<p>那么ok 输入 hexo三步部署。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean ’清除</span><br><span class="line">hexo generate ‘生成</span><br><span class="line">hexo deploy  ’部署</span><br><span class="line">如果最后显示 INFO  Deploy done: git 说明部署成功</span><br><span class="line">可能还要输入github用户名和邮箱或密码，视情况。</span><br></pre></td></tr></table></figure>
+<p>这时候刷新github repository 会发现有文件夹了和文件了。那就说明对了。浏览器可以使用*.gihub.io访问了。</p>
+<h1 id="问题-1"><a href="#问题-1" class="headerlink" title="问题 1"></a>问题 1</h1><ol>
+<li>显示不是 deploy done ？ 有一个error: GE007: Your push would publish a private email address.信息那就是你的github邮箱<strong>没有公开</strong><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34359927/article/details/83860031">解决</a><h1 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h1>2） Repository not found 你在 _config.yml 下输入的repo: 库源错误，如果是github 就要.<a target="_blank" rel="noopener" href="https://github.com/yourusername/yourusername.gihub.io">https://github.com/yourusername/yourusername.gihub.io</a><br>如果是gitee 就要 输入： <a target="_blank" rel="noopener" href="https://gitee.com/yourusername/yourusername.git">https://gitee.com/yourusername/yourusername.git</a><h1 id="问题3"><a href="#问题3" class="headerlink" title="问题3"></a>问题3</h1>输入 <code>hexo clean </code>显示失败，那么就要在&#x2F;blog目录下找到 public 如果是空文件夹就要删除，如果不是那么就要先复制一份到别的地方去在删除原来的。<h1 id="问题4"><a href="#问题4" class="headerlink" title="问题4"></a>问题4</h1>如果npm install cnpm 出现如下错误：<br><img src="/pg2/error1_cnpm--regisrty.png" alt="图片"></li>
+</ol>
+<p>重新指定 npm config set registry <a target="_blank" rel="noopener" href="https://registry.npmmirror.com/">https://registry.npmmirror.com</a><br>再查看下 npm config get registry，看看是否是 npmmirror.com</p>
+<h1 id="问题5"><a href="#问题5" class="headerlink" title="问题5"></a>问题5</h1><p>cnpm 版本与nodejs不符合，如何退回版本</p>
+<p>错误如下：wanted: {“node”:”&gt;&#x3D; 14.18.0”} (current: {“node”:”14.16.1”,”npm”:”6.14.12”})</p>
+<p>使用如下命令</p>
+<p>npm install -g <a href="mailto:&#99;&#110;&#112;&#x6d;&#64;&#55;&#46;&#x31;&#46;&#x31;">&#99;&#110;&#112;&#x6d;&#64;&#55;&#46;&#x31;&#46;&#x31;</a> –registry&#x3D;<a target="_blank" rel="noopener" href="http://registry.npmmirror.com/">http://registry.npmmirror.com</a></p>
+<p>&#x2F;&#x2F;查看有哪些cnpm版本命令：</p>
+<p>npm view cnpm versions</p>
+<hr>
+<h1 id="gitee-部署"><a href="#gitee-部署" class="headerlink" title="gitee 部署"></a>gitee 部署</h1><p> 结合着看 <strong>先看</strong> (<a target="_blank" rel="noopener" href="https://gitee.com/help/articles/4136#article-header0">https://gitee.com/help/articles/4136#article-header0</a>)</p>
+<h1 id="主题的更换"><a href="#主题的更换" class="headerlink" title="主题的更换"></a>主题的更换</h1><p> 在&#x2F;blog目录下<br><code>git clone https://github.com/litten/hexo-theme-yilia.git（.git也要输入） themes/yilia(yilia是自建的)</code>  如果没成功就多输几次。会发现&#x2F;blog&#x2F;theme目录下会出现yilia目录。<br>进入去&#x2F;blog目录下的_config.yml文件里。找到 <strong>#Extensions</strong> 下在 <em>theme：</em> 注意加一个空格输入 yilia</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">再输入</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>在浏览器中输入发现内容改变了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/23/pg2/" data-id="clyeatolp0004bouke7kk9uyn" data-title="建立hexo所遇到的坑" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
   </div>
-</article>
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/04/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-04-16T01:00:25.000Z" itemprop="datePublished">Apr 16</time>
+</article>
+
+
+
+  
+    <article id="post-我的第一篇博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
+  <time class="dt-published" datetime="2021-04-16T01:00:25.000Z" itemprop="datePublished">2021-04-16</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
+      <a class="p-name article-title" href="/2021/04/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/04/16/hello%20world/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-04-15T16:00:00.000Z" itemprop="datePublished">Apr 16</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
+        <h2 id="勤则百弊皆除"><a href="#勤则百弊皆除" class="headerlink" title="勤则百弊皆除"></a>勤则百弊皆除</h2><pre><code>勤奋是我能拿出的资本
+    
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html">修改hexo标题</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="clyeatolq0005bouk2plye0m7" data-title="我的第一篇博客" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/16/hello%20world/" class="article-date">
+  <time class="dt-published" datetime="2021-04-15T16:00:00.000Z" itemprop="datePublished">2021-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/16/hello%20world/">Hello world</a>
+      <a class="p-name article-title" href="/2021/04/16/hello%20world/">Hello world</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="我的第一篇博客小计，2021-4-16"><a href="#我的第一篇博客小计，2021-4-16" class="headerlink" title="我的第一篇博客小计，2021-4-16"></a>我的第一篇博客小计，2021-4-16</h2><p> 这个hexo博客框架，搞了我两天的时间。<del>hexo+gitee（中途github只有360可以上）后面放到gitee上。</del><br> gitee无法配置page页</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/16/hello%20world/" data-id="clyeatolo0002boukb9ue1l1p" data-title="Hello world" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
   </div>
+  
 </article>
-  
-  
-    </div></section>
+
+
+
   
 
 
